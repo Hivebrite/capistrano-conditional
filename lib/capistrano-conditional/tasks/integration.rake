@@ -2,7 +2,7 @@ abort "\nGit is not defined (are you in a git repository, with the Git gem insta
 
 # By default, assume using multi-stage deployment setting :branch variable, and that the local branch is up to date
 # (although don't require being on that branch to deploy).
-set :git_deploying, -> { fetch(:branch).nil? ? 'HEAD' : "origin/#{fetch(:branch)}"}
+set :git_deploying, -> { fetch(:branch).nil? ? 'HEAD' : fetch(:branch)}
 
 namespace :conditional do
   desc "Initializes the conditional deployment functionality"
